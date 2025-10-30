@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About Me</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Bebas Neue", Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          #fffdfa 0%,
+          #f9f6f0 50%,
+          #fdfcf9 100%
+        );
+        color: #222;
+        margin: 0;
+        padding: 32px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      h1,
+      .intro,
+      .name-highlight {
+        text-align: center;
+        letter-spacing: 1.5px;
+      }
+      .abir {
+        font-size: 1.7em;
+      }
+      h1 {
+        font-size: 1.5em;
+        margin-bottom: 0.2em;
+        color: #2d2d2d;
+      }
+      .intro {
+        font-size: 1.2em;
+        margin-bottom: 1.5em;
+      }
+      .name-highlight {
+        font-weight: 400;
+        color: #0078d7;
+        font-size: 2em;
+        margin-bottom: 1em;
+        display: block;
+      }
+      .section-title {
+        font-family: "Bebas Neue", Arial, sans-serif;
+        font-size: 1.15em;
+        letter-spacing: 2px;
+        color: #0078d7;
+        text-align: center;
+        margin: 1.5em auto 0.5em auto;
+        text-transform: uppercase;
+        background: linear-gradient(90deg, #e3f2fd 0%, #fff 100%);
+        border-radius: 8px;
+        padding: 6px 0;
+        box-shadow: 0 1px 4px rgba(0, 120, 215, 0.07);
+        width: fit-content;
+        min-width: 220px;
+        max-width: 90vw;
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+      ul.skills {
+        list-style: none;
+        margin: 0 auto 2em auto;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        letter-spacing: 1.5px;
+        width: 80%;
+      }
+      ul.skills li {
+        text-align: center;
+        font-size: 1.1em;
+        margin: 0.5em 0;
+        padding-left: 0;
+        position: relative;
+        width: 100%;
+        right: 40px;
+      }
+      ul.skills li:last-child {
+        margin-left: 30px;
+      }
+      .icons {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1em;
+      }
+      .icon-img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+      }
+      .dark-mode-btn,
+      .menu-btn {
+        position: fixed;
+        top: 24px;
+        z-index: 1000;
+        background: #222;
+        color: #fff;
+        border: none;
+        border-radius: 24px;
+        padding: 10px 18px;
+        font-size: 1.4em;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s, color 0.3s;
+        margin-bottom: 0;
+      }
+      .menu-btn {
+        left: 24px;
+      }
+      .dark-mode-btn {
+        right: 24px;
+      }
+      .social-icons {
+        position: fixed;
+        top: 24px;
+        right: 140px;
+        z-index: 1000;
+        display: flex;
+        gap: 16px;
+      }
+      .social-icon-img {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        display: block;
+        filter: none;
+        transition: transform 0.2s;
+      }
+      .social-icons a:hover .social-icon-img {
+        transform: scale(1.15);
+      }
+      .sub-menu {
+        position: fixed;
+        top: 60px;
+        left: 24px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+        padding: 16px 24px;
+        display: none;
+        z-index: 1002;
+        min-width: 180px;
+      }
+      .sub-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .sub-menu li {
+        margin: 12px 0;
+        text-align: left;
+      }
+      .sub-menu a {
+        text-decoration: none;
+        color: #0078d7;
+        font-family: "Bebas Neue", Arial, sans-serif;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        transition: color 0.2s;
+      }
+      .sub-menu a:hover {
+        color: #222;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 12px;
+          border-radius: 0;
+          box-shadow: none;
+        }
+        h1 {
+          font-size: 1.2em;
+        }
+        .name-highlight {
+          font-size: 1.2em;
+          margin-bottom: 0.7em;
+        }
+        .intro {
+          font-size: 1em;
+          margin-bottom: 1em;
+        }
+        ul.skills {
+          width: 100%;
+          font-size: 1em;
+        }
+        .icons {
+          gap: 12px;
+        }
+        .icon-img {
+          width: 32px;
+          height: 32px;
+        }
+        .dark-mode-btn,
+        .menu-btn {
+          padding: 8px 16px;
+          font-size: 1em;
+          margin-bottom: 16px;
+        }
+        .social-icons {
+          right: 80px;
+          gap: 10px;
+        }
+        .social-icon-img {
+          width: 24px;
+          height: 24px;
+        }
+        .sub-menu {
+          min-width: 120px;
+          padding: 10px 12px;
+        }
+        .sub-menu li {
+          margin: 8px 0;
+        }
+        .sub-menu a {
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="social-icons">
+      <a href="https://instagram.com/" target="_blank" title="Instagram">
+        <img
+          class="social-icon-img"
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+          alt="Instagram"
+        />
+      </a>
+      <a href="https://linkedin.com/" target="_blank" title="LinkedIn">
+        <img
+          class="social-icon-img"
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+          alt="LinkedIn"
+        />
+      </a>
+      <a href="https://facebook.com/" target="_blank" title="Facebook">
+        <img
+          class="social-icon-img"
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+          alt="Facebook"
+        />
+      </a>
+      <a href="https://github.com/" target="_blank" title="GitHub">
+        <img
+          class="social-icon-img"
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
+          alt="GitHub"
+        />
+      </a>
+    </div>
+    <button id="menuBtn" class="menu-btn" title="Menu">☰</button>
+    <nav id="subMenu" class="sub-menu">
+      <ul>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">My Projects</a></li>
+        <li><a href="#">My Photography</a></li>
+      </ul>
+    </nav>
+    <button id="randomBgBtn" class="dark-mode-btn" title="Random Background">
+      🎨
+    </button>
+    <div>
+      <h1>About Me</h1>
+      <span class="name-highlight"
+        >Hi, my name is <b class="abir">Abir</b>.</span
+      >
+      <p class="intro">
+        I am passionate about creative storytelling and visual communication.
+        <br />
+        With a background in copywriting, photography & editing, I love bringing
+        ideas to life through words and images.
+      </p>
+      <h3 class="section-title">Skills I Have</h3>
+      <ul class="skills">
+        <li>&#10177; Copywriting</li>
+        <li>&#10177; Photography</li>
+        <li>&#10177; Photo &amp; Video Editing</li>
+      </ul>
+      <h3 class="section-title">Applications I Am Good At</h3>
+      <div class="icons">
+        <div>
+          <img
+            class="icon-img"
+            src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+            alt="Photoshop"
+          />
+        </div>
+        <div>
+          <img
+            class="icon-img"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg/768px-Adobe_Photoshop_Lightroom_CC_logo.svg.png?20200616120137"
+            alt="Lightroom"
+          />
+        </div>
+        <div>
+          <img
+            class="icon-img"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/DaVinci_Resolve_17_logo.svg/2048px-DaVinci_Resolve_17_logo.svg.png"
+            alt="DaVinci Resolve"
+          />
+        </div>
+      </div>
+    </div>
+    <script>
+      const randomBgBtn = document.getElementById("randomBgBtn");
+      function getRandomColor() {
+        return (
+          "#" +
+          Math.floor(Math.random() * 16777215)
+            .toString(16)
+            .padStart(6, "0")
+        );
+      }
+      function getContrastYIQ(hexcolor) {
+        hexcolor = hexcolor.replace("#", "");
+        const r = parseInt(hexcolor.substr(0, 2), 16);
+        const g = parseInt(hexcolor.substr(2, 2), 16);
+        const b = parseInt(hexcolor.substr(4, 2), 16);
+        const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+        return yiq >= 128 ? "#222" : "#f5f5f5";
+      }
+      randomBgBtn.addEventListener("click", () => {
+        const color = getRandomColor();
+        document.body.style.background = color;
+        document.body.style.color = getContrastYIQ(color);
+      });
+      const menuBtn = document.getElementById("menuBtn");
+      const subMenu = document.getElementById("subMenu");
+      let menuOpen = false;
+      menuBtn.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+        subMenu.style.display = menuOpen ? "block" : "none";
+      });
+      document.addEventListener("click", (e) => {
+        if (menuOpen && !subMenu.contains(e.target) && e.target !== menuBtn) {
+          subMenu.style.display = "none";
+          menuOpen = false;
+        }
+      });
+    </script>
+    <footer
+      style="
+        width: 100%;
+        text-align: center;
+        margin-top: 32px;
+        font-size: 1em;
+        color: #888;
+      "
+    >
+      &copy; 2025 Abir Hasan Eka, all rights reserved.
+    </footer>
+  </body>
+</html>
