@@ -1,6 +1,6 @@
 okra
 pumpkin
-agurk
+beetroot
 onion
 tomato
 potato
