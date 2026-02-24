@@ -1,5 +1,7 @@
 okra
 pumpkin
-cucumber
+agurk
 onion
 tomato
+potato
+pea
